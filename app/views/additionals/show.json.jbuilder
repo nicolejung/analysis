@@ -1,0 +1,1 @@
+json.extract! @additional, :id, :raman, :hrms, :uv, :fnmr, :pnmr, :bnmr, :nnmr, :mass1, :mass3, :buffer1, :buffer2, :buffer3, :oka, :okb, :singlepart_id, :description_id, :fulldoc_id, :created_at, :updated_at

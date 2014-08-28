@@ -1,0 +1,51 @@
+<h1>Listing sumhs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>All</th>
+      <th>Value</th>
+      <th>Fill1</th>
+      <th>Fill2</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Okc</th>
+      <th>Okd</th>
+      <th>Fulldoc</th>
+      <th>Singlepart</th>
+      <th>Description</th>
+      <th>Hnmr</th>
+      <th>Nmrdetailh</th>
+      <th>Coupling</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sumhs.each do |sumh| %>
+      <tr>
+        <td><%= sumh.all %></td>
+        <td><%= sumh.value %></td>
+        <td><%= sumh.fill1 %></td>
+        <td><%= sumh.fill2 %></td>
+        <td><%= sumh.oka %></td>
+        <td><%= sumh.okb %></td>
+        <td><%= sumh.okc %></td>
+        <td><%= sumh.okd %></td>
+        <td><%= sumh.fulldoc_id %></td>
+        <td><%= sumh.singlepart_id %></td>
+        <td><%= sumh.description_id %></td>
+        <td><%= sumh.hnmr_id %></td>
+        <td><%= sumh.nmrdetailh_id %></td>
+        <td><%= sumh.coupling_id %></td>
+        <td><%= link_to 'Show', sumh %></td>
+        <td><%= link_to 'Edit', edit_sumh_path(sumh) %></td>
+        <td><%= link_to 'Destroy', sumh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sumh', new_sumh_path %>

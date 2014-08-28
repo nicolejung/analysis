@@ -1,0 +1,125 @@
+<%= form_for(@singlepart) do |f| %>
+  <% if @singlepart.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@singlepart.errors.count, "error") %> prohibited this singlepart from being saved:</h2>
+
+      <ul>
+      <% @singlepart.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-actions">
+  <%= f.button :submit, :class => "btn btn-success" %>
+  </div>
+  <br>
+
+  <div class="field">
+    <%= f.label :experimental %><br>
+    <%= f.text_field :experimental %>
+  </div>
+  <div class="field">
+    <%= f.label :describe %><br>
+    <%= f.text_field :describe %>
+  </div>
+  <div class="field">
+    <%= f.label :ea %><br>
+    <%= f.text_field :ea %>
+  </div>
+  <div class="field">
+    <%= f.label :hnmr %><br>
+    <%= f.text_field :hnmr %>
+  </div>
+  <div class="field">
+    <%= f.label :cnmr %><br>
+    <%= f.text_field :cnmr %>
+  </div>
+  <div class="field">
+    <%= f.label :calch %><br>
+    <%= f.text_field :calch %>
+  </div>
+  <div class="field">
+    <%= f.label :calcc %><br>
+    <%= f.text_field :calcc %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :fnmr %><br>
+    <%= f.text_field :fnmr %>
+  </div>
+  <div class="field">
+    <%= f.label :pnmr %><br>
+    <%= f.text_field :pnmr %>
+  </div>
+  <div class="field">
+    <%= f.label :bnmr %><br>
+    <%= f.text_field :bnmr %>
+  </div>
+  <div class="field">
+    <%= f.label :nnmr %><br>
+    <%= f.text_field :nnmr %>
+  </div>
+  <div class="field">
+    <%= f.label :mass1 %><br>
+    <%= f.text_field :mass1 %>
+  </div>
+  <div class="field">
+    <%= f.label :ir %><br>
+    <%= f.text_field :ir %>
+  </div>
+  <div class="field">
+    <%= f.label :raman %><br>
+    <%= f.text_field :raman %>
+  </div>
+  <div class="field">
+    <%= f.label :mass2 %><br>
+    <%= f.text_field :mass2 %>
+  </div>
+  <div class="field">
+    <%= f.label :mass3 %><br>
+    <%= f.text_field :mass3 %>
+  </div>
+  <div class="field">
+    <%= f.label :uv %><br>
+    <%= f.text_field :uv %>
+  </div>
+  <div class="field">
+    <%= f.label :givenc %><br>
+    <%= f.text_field :givenc %>
+  </div>
+  <div class="field">
+    <%= f.label :givenh %><br>
+    <%= f.text_field :givenh %>
+  </div>
+  <div class="field">
+    <%= f.label :fill1 %><br>
+    <%= f.text_field :fill1 %>
+  </div>
+  <div class="field">
+    <%= f.label :oka %><br>
+    <%= f.check_box :oka %>
+  </div>
+  <div class="field">
+    <%= f.label :okb %><br>
+    <%= f.check_box :okb %>
+  </div>
+  <div class="field">
+    <%= f.label :okc %><br>
+    <%= f.check_box :okc %>
+  </div>
+  <div class="field">
+    <%= f.label :okd %><br>
+    <%= f.check_box :okd %>
+  </div>
+  <br>
+  <div class="form-actions">
+  <%= f.button :submit, :class => "btn btn-success" %>
+  </div>
+  <br>
+
+<% end %>

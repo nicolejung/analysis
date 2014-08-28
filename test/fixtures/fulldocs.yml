@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chemist: MyString
+  source: MyString
+  name: MyString
+  fulltext: MyString
+  format: MyString
+  sumexp: MyString
+  fill1: MyString
+  fill2: MyString
+  fill3: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+
+two:
+  chemist: MyString
+  source: MyString
+  name: MyString
+  fulltext: MyString
+  format: MyString
+  sumexp: MyString
+  fill1: MyString
+  fill2: MyString
+  fill3: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false

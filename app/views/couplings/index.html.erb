@@ -1,0 +1,49 @@
+<h1>Listing couplings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Multiplet</th>
+      <th>Givej</th>
+      <th>Distance</th>
+      <th>Hz</th>
+      <th>Detail</th>
+      <th>Fill1</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Fulldoc</th>
+      <th>Singlepart</th>
+      <th>Description</th>
+      <th>Hnmr</th>
+      <th>Nmrdetailh</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @couplings.each do |coupling| %>
+      <tr>
+        <td><%= coupling.multiplet %></td>
+        <td><%= coupling.givej %></td>
+        <td><%= coupling.distance %></td>
+        <td><%= coupling.hz %></td>
+        <td><%= coupling.detail %></td>
+        <td><%= coupling.fill1 %></td>
+        <td><%= coupling.oka %></td>
+        <td><%= coupling.okb %></td>
+        <td><%= coupling.fulldoc_id %></td>
+        <td><%= coupling.singlepart_id %></td>
+        <td><%= coupling.description_id %></td>
+        <td><%= coupling.hnmr_id %></td>
+        <td><%= coupling.nmrdetailh_id %></td>
+        <td><%= link_to 'Show', coupling %></td>
+        <td><%= link_to 'Edit', edit_coupling_path(coupling) %></td>
+        <td><%= link_to 'Destroy', coupling, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coupling', new_coupling_path %>

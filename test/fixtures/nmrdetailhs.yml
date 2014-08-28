@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  signal: MyString
+  area: MyString
+  shift: 9.99
+  first: 9.99
+  last: 9.99
+  hamount: MyString
+  fill1: MyString
+  fill2: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+  fulldoc_id: MyString
+  singlepart_id: MyString
+  description_id: MyString
+  hnmr_id: MyString
+
+two:
+  signal: MyString
+  area: MyString
+  shift: 9.99
+  first: 9.99
+  last: 9.99
+  hamount: MyString
+  fill1: MyString
+  fill2: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+  fulldoc_id: MyString
+  singlepart_id: MyString
+  description_id: MyString
+  hnmr_id: MyString

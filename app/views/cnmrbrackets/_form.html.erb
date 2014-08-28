@@ -1,0 +1,77 @@
+<%= form_for(@cnmrbracket) do |f| %>
+  <% if @cnmrbracket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cnmrbracket.errors.count, "error") %> prohibited this cnmrbracket from being saved:</h2>
+
+      <ul>
+      <% @cnmrbracket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :signal %><br>
+    <%= f.text_field :signal %>
+  </div>
+  <div class="field">
+    <%= f.label :multiplet %><br>
+    <%= f.text_field :multiplet %>
+  </div>
+  <div class="field">
+    <%= f.label :amountc %><br>
+    <%= f.text_field :amountc %>
+  </div>
+  <div class="field">
+    <%= f.label :coupling %><br>
+    <%= f.text_field :coupling %>
+  </div>
+  <div class="field">
+    <%= f.label :buffera %><br>
+    <%= f.text_field :buffera %>
+  </div>
+  <div class="field">
+    <%= f.label :bufferb %><br>
+    <%= f.text_field :bufferb %>
+  </div>
+  <div class="field">
+    <%= f.label :countc %><br>
+    <%= f.text_field :countc %>
+  </div>
+  <div class="field">
+    <%= f.label :adaptc %><br>
+    <%= f.text_field :adaptc %>
+  </div>
+  <div class="field">
+    <%= f.label :oka %><br>
+    <%= f.check_box :oka %>
+  </div>
+  <div class="field">
+    <%= f.label :okb %><br>
+    <%= f.check_box :okb %>
+  </div>
+  <div class="field">
+    <%= f.label :nmrdetailc_id %><br>
+    <%= f.text_field :nmrdetailc_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cnmr_id %><br>
+    <%= f.text_field :cnmr_id %>
+  </div>
+  <div class="field">
+    <%= f.label :singlepart_id %><br>
+    <%= f.text_field :singlepart_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description_id %><br>
+    <%= f.text_field :description_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fulldoc_id %><br>
+    <%= f.text_field :fulldoc_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

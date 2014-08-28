@@ -1,0 +1,53 @@
+<h1>Listing cnmrbrackets</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Signal</th>
+      <th>Multiplet</th>
+      <th>Amountc</th>
+      <th>Coupling</th>
+      <th>Buffera</th>
+      <th>Bufferb</th>
+      <th>Countc</th>
+      <th>Adaptc</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Nmrdetailc</th>
+      <th>Cnmr</th>
+      <th>Singlepart</th>
+      <th>Description</th>
+      <th>Fulldoc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cnmrbrackets.each do |cnmrbracket| %>
+      <tr>
+        <td><%= cnmrbracket.signal %></td>
+        <td><%= cnmrbracket.multiplet %></td>
+        <td><%= cnmrbracket.amountc %></td>
+        <td><%= cnmrbracket.coupling %></td>
+        <td><%= cnmrbracket.buffera %></td>
+        <td><%= cnmrbracket.bufferb %></td>
+        <td><%= cnmrbracket.countc %></td>
+        <td><%= cnmrbracket.adaptc %></td>
+        <td><%= cnmrbracket.oka %></td>
+        <td><%= cnmrbracket.okb %></td>
+        <td><%= cnmrbracket.nmrdetailc_id %></td>
+        <td><%= cnmrbracket.cnmr_id %></td>
+        <td><%= cnmrbracket.singlepart_id %></td>
+        <td><%= cnmrbracket.description_id %></td>
+        <td><%= cnmrbracket.fulldoc_id %></td>
+        <td><%= link_to 'Show', cnmrbracket %></td>
+        <td><%= link_to 'Edit', edit_cnmrbracket_path(cnmrbracket) %></td>
+        <td><%= link_to 'Destroy', cnmrbracket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cnmrbracket', new_cnmrbracket_path %>

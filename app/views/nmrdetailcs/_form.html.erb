@@ -1,0 +1,57 @@
+<%= form_for(@nmrdetailc) do |f| %>
+  <% if @nmrdetailc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nmrdetailc.errors.count, "error") %> prohibited this nmrdetailc from being saved:</h2>
+
+      <ul>
+      <% @nmrdetailc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :signal %><br>
+    <%= f.text_field :signal %>
+  </div>
+  <div class="field">
+    <%= f.label :buffer1 %><br>
+    <%= f.text_field :buffer1 %>
+  </div>
+  <div class="field">
+    <%= f.label :buffer2 %><br>
+    <%= f.text_field :buffer2 %>
+  </div>
+  <div class="field">
+    <%= f.label :buffer3 %><br>
+    <%= f.text_field :buffer3 %>
+  </div>
+  <div class="field">
+    <%= f.label :oka %><br>
+    <%= f.check_box :oka %>
+  </div>
+  <div class="field">
+    <%= f.label :okb %><br>
+    <%= f.check_box :okb %>
+  </div>
+  <div class="field">
+    <%= f.label :cnmr_id %><br>
+    <%= f.text_field :cnmr_id %>
+  </div>
+  <div class="field">
+    <%= f.label :singlepart_id %><br>
+    <%= f.text_field :singlepart_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description_id %><br>
+    <%= f.text_field :description_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fulldoc_id %><br>
+    <%= f.text_field :fulldoc_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

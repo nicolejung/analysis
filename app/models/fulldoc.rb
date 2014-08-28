@@ -1,0 +1,198 @@
+class Fulldoc < ActiveRecord::Base
+
+  has_many :singleparts
+  has_many :hnmrs
+  has_many :cnmrs
+  has_many :nmrdetailhs
+
+  def mach1
+    mach11
+    bestand
+  end
+
+  def mach11
+
+    t = fulltext
+
+    if t.include?'H-NMR' then
+    t = t.gsub!'H-NMR','HNMR'    
+    end
+  
+    if t.include?'H NMR' then
+    t = t.gsub!'H NMR','HNMR'
+    end
+    
+    if t.include?'C-NMR' then
+    t = t.gsub!'C-NMR','CNMR'
+    end
+  
+    if t.include?'C NMR' then
+    t = t.gsub!'C NMR','CNMR'
+    end
+
+    if t.include?'HR-MS' then
+    t = t.gsub!'HR-MS','HRMS'
+    end
+
+    if t.include?'HR MS' then
+    t = t.gsub!'HR MS','HRMS'
+    end
+
+    if t.include?'EI-MS' then
+    t = t.gsub!'EI-MS','EIMS'
+    end
+
+    if t.include?'EI MS' then
+    t = t.gsub!'EI MS', 'EIMS'
+    end
+
+    if t.include?') ppm.' then
+    t = t.gsub!') ppm.', ').'
+    end
+
+    if t.include?')ppm.' then
+    t = t.gsub!')ppm.', ').'
+    end
+
+    if t.include?'ppm.' then
+    t = t.gsub!'ppm.', '.'
+    end
+   
+    if t.include?' - ' then
+    t = t.gsub!' - ', '-'
+    end
+
+    if t.include?'gef.' then
+    t = t.gsub!'gef.', 'found'
+    end
+ 
+    if t.include?'gef' then
+    t = t.gsub!'gef', 'found'
+    end
+
+    if t.include?'found:' then
+    t = t.gsub!'found:', 'found'
+    end
+   
+    if t.include?'ber' then
+    t = t.gsub!'ber', 'calc'
+    end
+
+    if t.include?'calc.' then
+    t = t.gsub!'calc', 'calc'
+    end
+
+    if t.include?'calc:' then
+    t = t.gsub!'calc:', 'calc'
+    end
+
+    if t.include?'ber.' then
+    t = t.gsub!'ber.', 'calc'
+    end
+   
+    if t.include?') - IR' then
+    t = t.gsub!') - IR','). - IR'
+    end
+
+    #unicode einbauen:
+    if t.include?"\uF02D" then
+    t.gsub!"\uF02D", '-'
+    end
+
+    if t.include?"\u2013" then
+    t.gsub!"\u2013", '-'
+    end
+
+    if t.include?"\uF020" then
+    t.gsub!"\uF020", ' '
+    end
+
+    if t.include?"\uF06C" then
+    t = t.gsub!"\uF06C", "\u03BB"
+    end
+#Multiplikationskreuz ersetzen
+    if t.include?"\u00D7" then
+    t = t.gsub!"\u00D7", "x"
+    end
+#delta einfuegen
+    if t.include?"\uF065" then
+    t = t.gsub!"\uF065", "\u03B5"
+    end
+
+    if t.include?"\uF064" then
+    t = t.gsub!"\uF064", "\u03B4"
+    end
+
+    if t.include?') .' then
+    t = t.gsub!') .', ').'
+    end
+
+    if t.include?') -' then
+    t = t.gsub!') -', '). -'
+    end
+
+    if t.include?'.-IR' then
+    t = t.gsub!'.-IR', '. - IR'
+    end
+
+    if t.include?').-' then
+    t = t.gsub!').-', '). -'
+    end  
+  
+    reg = /(\d{4}),(\d{4})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{3}),(\d{4})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{3}),(\d{3})/
+    t.gsub!(reg, '\1, \2')
+  
+    reg = /(\d{3}),(\d{2} )/
+    t.gsub!(reg, '\1.\2')
+
+    reg = /(\d{3}),(\d{1} )/
+    t.gsub!(reg, '\1.\2')
+
+    reg = /(\d{3}.\d{1}),(\d{3}.\d{1})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{3}.\d{2}),(\d{3}.\d{2})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{3}.\d{2}),(\d{4}.\d{2})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{4}.\d{2}),(\d{4}.\d{2})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{4}.\d{1}),(\d{4}.\d{1})/
+    t.gsub!(reg, '\1, \2')
+
+    update_attribute(:format, t)
+
+    machgesamt2
+  end
+
+  def machgesamt2
+           
+           Singlepart.where(["fulldoc_id = ?", id]).destroy_all
+          
+
+           format.split('NEU').each do |yyy|
+
+	   singlepart = Singlepart.new
+	   singlepart.fulldoc_id = id
+	   singlepart.experimental = yyy 
+	   singlepart.save
+	   singlepart.mach2    
+           
+           end
+ 
+  end
+ 
+  def bestand
+    rr = singleparts.count
+    update_attribute(:sumexp, rr)
+  end 
+end

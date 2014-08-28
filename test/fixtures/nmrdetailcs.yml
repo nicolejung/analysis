@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  signal: MyString
+  buffer1: MyString
+  buffer2: MyString
+  buffer3: MyString
+  oka: false
+  okb: false
+  cnmr_id: MyString
+  singlepart_id: MyString
+  description_id: MyString
+  fulldoc_id: MyString
+
+two:
+  signal: MyString
+  buffer1: MyString
+  buffer2: MyString
+  buffer3: MyString
+  oka: false
+  okb: false
+  cnmr_id: MyString
+  singlepart_id: MyString
+  description_id: MyString
+  fulldoc_id: MyString

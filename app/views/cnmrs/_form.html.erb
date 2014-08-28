@@ -1,0 +1,93 @@
+<%= form_for(@cnmr) do |f| %>
+  <% if @cnmr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cnmr.errors.count, "error") %> prohibited this cnmr from being saved:</h2>
+
+      <ul>
+      <% @cnmr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :filename %><br>
+    <%= f.text_field :filename %>
+  </div>
+  <div class="field">
+    <%= f.label :partanalysis %><br>
+    <%= f.text_field :partanalysis %>
+  </div>
+  <div class="field">
+    <%= f.label :solvent1 %><br>
+    <%= f.text_field :solvent1 %>
+  </div>
+  <div class="field">
+    <%= f.label :solvent2 %><br>
+    <%= f.text_field :solvent2 %>
+  </div>
+  <div class="field">
+    <%= f.label :sumc %><br>
+    <%= f.text_field :sumc %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument %><br>
+    <%= f.text_field :instrument %>
+  </div>
+  <div class="field">
+    <%= f.label :method %><br>
+    <%= f.text_field :method %>
+  </div>
+  <div class="field">
+    <%= f.label :pulseprogram %><br>
+    <%= f.text_field :pulseprogram %>
+  </div>
+  <div class="field">
+    <%= f.label :temp %><br>
+    <%= f.text_field :temp %>
+  </div>
+  <div class="field">
+    <%= f.label :scans %><br>
+    <%= f.text_field :scans %>
+  </div>
+  <div class="field">
+    <%= f.label :buffera %><br>
+    <%= f.text_field :buffera %>
+  </div>
+  <div class="field">
+    <%= f.label :oka %><br>
+    <%= f.check_box :oka %>
+  </div>
+  <div class="field">
+    <%= f.label :okb %><br>
+    <%= f.check_box :okb %>
+  </div>
+  <div class="field">
+    <%= f.label :okc %><br>
+    <%= f.check_box :okc %>
+  </div>
+  <div class="field">
+    <%= f.label :okd %><br>
+    <%= f.check_box :okd %>
+  </div>
+  <div class="field">
+    <%= f.label :singlepart_id %><br>
+    <%= f.text_field :singlepart_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description_id %><br>
+    <%= f.text_field :description_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fulldoc_id %><br>
+    <%= f.text_field :fulldoc_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  experimental: MyString
+  describe: MyString
+  ea: MyString
+  hnmr: MyString
+  cnmr: MyString
+  calch: MyString
+  calcc: MyString
+  value: MyString
+  fnmr: MyString
+  pnmr: MyString
+  bnmr: MyString
+  nnmr: MyString
+  mass1: MyString
+  ir: MyString
+  raman: MyString
+  mass2: MyString
+  mass3: MyString
+  uv: MyString
+  givenc: MyString
+  givenh: MyString
+  fill1: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+  fulldoc_id: MyString
+
+two:
+  experimental: MyString
+  describe: MyString
+  ea: MyString
+  hnmr: MyString
+  cnmr: MyString
+  calch: MyString
+  calcc: MyString
+  value: MyString
+  fnmr: MyString
+  pnmr: MyString
+  bnmr: MyString
+  nnmr: MyString
+  mass1: MyString
+  ir: MyString
+  raman: MyString
+  mass2: MyString
+  mass3: MyString
+  uv: MyString
+  givenc: MyString
+  givenh: MyString
+  fill1: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+  fulldoc_id: MyString

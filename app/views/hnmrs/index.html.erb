@@ -1,0 +1,64 @@
+<h1>Listing hnmrs</h1>  
+
+<%= link_to 'New Hnmr', url_for(:action => 'new', :controller => 'hnmrs') , :class => "btn btn-primary btn-mini" %> | <%= link_to 'See Full Analysis', singleparts_path, :class => "btn btn-default btn-mini" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Filename</th>
+      <th>Analysis</th>
+      <th>Amounth</th>
+      <th>Solvent1</th>
+      <th>Mhz</th>
+  <!--<th>Solvent2</th>
+      <th>Method</th>
+      <th>Temperature</th>
+      <th>Scans</th>
+      <th>Pulseprogram</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Okc</th> -->
+      <th>Okd</th>
+      <th>Singlepart</th>
+    <!--   <th>Fulldoc</th>
+      <th>Description</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hnmrs.each do |hnmr| %>
+      <tr>
+        <td><%= hnmr.name %></td>
+        <td><%= hnmr.filename %></td>
+        <td><%= best_in_place hnmr, :analysis, type: :textarea %></td>
+        <td><%= hnmr.amounth %></td>
+        <td><%= hnmr.solvent1 %></td>
+        <td><%= hnmr.mhz %></td>
+  <!--  <td><%= hnmr.solvent2 %></td>
+        <td><%= hnmr.method %> </td>
+        <td><%= hnmr.temperature %></td>
+        <td><%= hnmr.scans %></td>
+        <td><%= hnmr.pulseprogram %></td>
+        <td><%= hnmr.oka %></td>
+        <td><%= hnmr.okb %></td>
+        <td><%= hnmr.okc %></td> -->
+        <td><%= hnmr.okd %></td>
+        <td><%= hnmr.singlepart_id %></td>
+       <!-- <td><%= hnmr.fulldoc_id %></td> -->
+        <td><%= hnmr.description_id %></td>
+        <td><%= link_to 'Show', hnmr %></td>
+        <td><%= link_to 'Edit', edit_hnmr_path(hnmr) %></td>
+        <td><%= link_to 'Destroy', hnmr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+  <%= link_to 'New Hnmr', new_hnmr_path %>
+ 
+ <br>

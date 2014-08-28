@@ -1,0 +1,80 @@
+<h1>Listing singleparts</h1>
+<br>
+<%= link_to 'New Singlepart', url_for(:action => 'new', :controller => 'singleparts') , :class => "btn btn-primary btn-mini" %>
+<%= link_to 'Full Texts', url_for(:action => 'index', :controller => 'fulldocs') , :class => "btn btn-default btn-mini" %>
+<br>
+
+<table class="table"> 
+  <thead>
+    <tr>
+     <!-- <th>Experimental</th> -->
+     <!-- <th>Describe</th> -->
+      <th>Formula</th>
+      <th>Calc C</th>
+      <th>Calc H</th>
+      <th>H-NMR Analysis</th>
+      <th>C-NMR Analysis</th>
+ <!-- <th>Fnmr</th>
+      <th>Value</th>
+      <th>Pnmr</th>
+      <th>Bnmr</th>
+      <th>Nnmr</th>
+      <th>Mass1</th> -->
+      <th>EI-Mass Analysis</th>
+      <th>IR Spectra</th>
+ <!-- <th>Raman</th>
+      <th>Mass3</th>
+      <th>Uv</th>
+      <th>Givenc</th>
+      <th>Givenh</th>
+      <th>Fill1</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Okc</th>
+      <th>Okd</th>-->
+      <th>OTHERS</th>
+<!--  <th>Fulldoc</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @singleparts.each do |singlepart| %>
+      <tr>
+       <!-- <td><%= singlepart.experimental %></td>-->
+       <!-- <td><%= singlepart.describe %></td> -->
+        <td><%= best_in_place singlepart, :ea %> <%= link_to "Description", descriptions_path(:singlepart => singlepart.id) %></td>
+        <td><%= best_in_place singlepart, :calcc %></td>
+        <td><%= best_in_place singlepart, :calch %></td>
+        <td><%= best_in_place singlepart, :hnmr, type: :textarea %> <br> <%= link_to "H-NMR DETAILS", hnmrs_path(:singlepart => singlepart.id) %></td>
+        <td><%= best_in_place singlepart, :cnmr, type: :textarea %> <br> <%= link_to "C-NMR DETAILS", cnmrs_path(:singlepart => singlepart.id) %></td>
+  <!--  <td><%= singlepart.fnmr %></td>
+        <td><%= singlepart.value %></td>
+        <td><%= singlepart.pnmr %></td>
+        <td><%= singlepart.bnmr %></td>
+        <td><%= singlepart.nnmr %></td>
+        <td><%= singlepart.mass1 %></td>-->
+        <td><%= best_in_place singlepart, :mass2 ,type: :textarea%> </td>
+        <td><%= best_in_place singlepart, :ir ,type: :textarea%> </td>
+  <!--  <td><%= singlepart.raman %></td>
+        <td><%= singlepart.mass3 %></td>
+        <td><%= singlepart.uv %></td>
+        <td><%= singlepart.givenc %></td>
+        <td><%= singlepart.givenh %></td>
+        <td><%= singlepart.fill1 %></td>
+        <td><%= singlepart.oka %></td>
+        <td><%= singlepart.okb %></td>
+        <td><%= singlepart.okc %></td>
+        <td><%= singlepart.okd %></td>-->
+        <td><%= link_to "HRMS", additionals_path(:singlepart => singlepart.id) %> <br> <%= link_to "UV", additionals_path(:singlepart => singlepart.id) %> <br> <%= link_to "Raman", additionals_path(:singlepart => singlepart.id) %> <br> <%= link_to "Mass", additionals_path(:singlepart => singlepart.id) %> <br> <%= link_to "19F-NMR", additionals_path(:singlepart => singlepart.id) %> <br> <%= link_to "31P-NMR", additionals_path(:singlepart => singlepart.id) %> </td>
+   <!-- <td><%= singlepart.fulldoc_id %></td>-->
+        <td><%= link_to 'Show', singlepart %> <%= link_to 'Edit', edit_singlepart_path(singlepart) %> <%= link_to 'Destroy', singlepart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Singlepart', url_for(:action => 'new', :controller => 'singleparts') , :class => "btn btn-primary btn-mini" %>
+<%= link_to 'Full Texts', url_for(:action => 'index', :controller => 'fulldocs') , :class => "btn btn-default btn-mini" %>
+

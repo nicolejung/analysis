@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  filename: MyString
+  partanalysis: MyString
+  solvent1: MyString
+  solvent2: MyString
+  sumc: MyString
+  instrument: MyString
+  method: MyString
+  pulseprogram: MyString
+  temp: MyString
+  scans: MyString
+  buffera: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+  singlepart_id: MyString
+  description_id: MyString
+  fulldoc_id: MyString
+
+two:
+  name: MyString
+  filename: MyString
+  partanalysis: MyString
+  solvent1: MyString
+  solvent2: MyString
+  sumc: MyString
+  instrument: MyString
+  method: MyString
+  pulseprogram: MyString
+  temp: MyString
+  scans: MyString
+  buffera: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+  singlepart_id: MyString
+  description_id: MyString
+  fulldoc_id: MyString

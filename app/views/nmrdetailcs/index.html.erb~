@@ -1,0 +1,43 @@
+<h1>Listing nmrdetailcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Signal</th>
+      <th>Buffer1</th>
+      <th>Buffer2</th>
+      <th>Buffer3</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Cnmr</th>
+      <th>Singlepart</th>
+      <th>Description</th>
+      <th>Fulldoc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nmrdetailcs.each do |nmrdetailc| %>
+      <tr>
+        <td><%= nmrdetailc.signal %></td>
+        <td><%= nmrdetailc.buffer1 %></td>
+        <td><%= nmrdetailc.buffer2 %></td>
+        <td><%= nmrdetailc.buffer3 %></td>
+        <td><%= nmrdetailc.oka %></td>
+        <td><%= nmrdetailc.okb %></td>
+        <td><%= nmrdetailc.cnmr_id %></td>
+        <td><%= nmrdetailc.singlepart_id %></td>
+        <td><%= nmrdetailc.description_id %></td>
+        <td><%= nmrdetailc.fulldoc_id %></td>
+        <td><%= link_to 'Show', nmrdetailc %></td>
+        <td><%= link_to 'Edit', edit_nmrdetailc_path(nmrdetailc) %></td>
+        <td><%= link_to 'Destroy', nmrdetailc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nmrdetailc', new_nmrdetailc_path %>

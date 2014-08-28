@@ -1,0 +1,2 @@
+module SumhsHelper
+end

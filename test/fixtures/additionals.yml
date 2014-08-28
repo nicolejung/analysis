@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  raman: MyString
+  hrms: MyString
+  uv: MyString
+  fnmr: MyString
+  pnmr: MyString
+  bnmr: MyString
+  nnmr: MyString
+  mass1: MyString
+  mass3: MyString
+  buffer1: MyString
+  buffer2: MyString
+  buffer3: MyString
+  oka: false
+  okb: false
+  singlepart_id: MyString
+  description_id: MyString
+  fulldoc_id: MyString
+
+two:
+  raman: MyString
+  hrms: MyString
+  uv: MyString
+  fnmr: MyString
+  pnmr: MyString
+  bnmr: MyString
+  nnmr: MyString
+  mass1: MyString
+  mass3: MyString
+  buffer1: MyString
+  buffer2: MyString
+  buffer3: MyString
+  oka: false
+  okb: false
+  singlepart_id: MyString
+  description_id: MyString
+  fulldoc_id: MyString

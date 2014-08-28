@@ -1,0 +1,49 @@
+<h1>Listing descriptions</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Samplename</th>
+      <th>Fulldescribe</th>
+      <th>Purification</th>
+      <th>Rfvalue</th>
+      <th>Yield</th>
+      <th>Fill1</th>
+      <th>Fill2</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Okc</th>
+      <th>Okd</th>
+      <th>Fulldoc</th>
+      <th>Singlepart</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @descriptions.each do |description| %>
+      <tr>
+        <td><%= description.samplename %></td>
+        <td><%= description.fulldescribe %></td>
+        <td><%= description.purification %></td>
+        <td><%= description.rfvalue %></td>
+        <td><%= description.yield %></td>
+        <td><%= description.fill1 %></td>
+        <td><%= description.fill2 %></td>
+        <td><%= description.oka %></td>
+        <td><%= description.okb %></td>
+        <td><%= description.okc %></td>
+        <td><%= description.okd %></td>
+        <td><%= description.fulldoc_id %></td>
+        <td><%= description.singlepart_id %></td>
+        <td><%= link_to 'Show', description %></td>
+        <td><%= link_to 'Edit', edit_description_path(description) %></td>
+        <td><%= link_to 'Destroy', description, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Description', new_description_path %>

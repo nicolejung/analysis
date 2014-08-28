@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <%= link_to 'Edit', url_for(:action => 'edit', :controller => 'hnmrs') , :class => "btn btn-primary btn-mini" %>  |  <%= link_to 'See H-NMR List', hnmrs_path, :class => "btn btn-primary btn-mini" %>  | <%= link_to 'New Hnmr', url_for(:action => 'new', :controller => 'hnmrs') , :class => "btn btn-primary btn-mini" %>
+</p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @hnmr.name %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @hnmr.filename %>
+</p>
+
+<p>
+  <strong>Analysis:</strong>
+  <%= @hnmr.analysis.html_safe %>
+</p>
+
+<p>
+  <strong>Amounth:</strong>
+  <%= @hnmr.amounth %>
+</p>
+
+<p>
+  <strong>Method:</strong>
+  <%= @hnmr.method %>
+</p>
+
+<p>
+  <strong>Solvent1:</strong>
+  <%= @hnmr.solvent1 %>
+</p>
+
+<p>
+  <strong>Solvent2:</strong>
+  <%= @hnmr.solvent2 %>
+</p>
+
+<p>
+  <strong>Mhz:</strong>
+  <%= @hnmr.mhz %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @hnmr.temperature %>
+</p>
+
+<p>
+  <strong>Scans:</strong>
+  <%= @hnmr.scans %>
+</p>
+
+<p>
+  <strong>Pulseprogram:</strong>
+  <%= @hnmr.pulseprogram %>
+</p>
+
+<p>
+  <strong>Oka:</strong>
+  <%= @hnmr.oka %>
+</p>
+
+<p>
+  <strong>Okb:</strong>
+  <%= @hnmr.okb %>
+</p>
+
+<p>
+  <strong>Okc:</strong>
+  <%= @hnmr.okc %>
+</p>
+
+<p>
+  <strong>Okd:</strong>
+  <%= @hnmr.okd %>
+</p>
+
+<p>
+  <strong>Fulldoc:</strong>
+  <%= @hnmr.fulldoc_id %>
+</p>
+
+<p>
+  <strong>Singlepart:</strong>
+  <%= @hnmr.singlepart_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hnmr.description_id %>
+</p>
+
+<%= link_to 'Edit', edit_hnmr_path(@hnmr) %> |
+<%= link_to 'Back', hnmrs_path %>

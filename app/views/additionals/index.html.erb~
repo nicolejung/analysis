@@ -1,0 +1,57 @@
+<h1>Listing additionals</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Raman</th>
+      <th>Hrms</th>
+      <th>Uv</th>
+      <th>Fnmr</th>
+      <th>Pnmr</th>
+      <th>Bnmr</th>
+      <th>Nnmr</th>
+      <th>Mass1</th>
+      <th>Mass3</th>
+      <th>Buffer1</th>
+      <th>Buffer2</th>
+      <th>Buffer3</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Singlepart</th>
+      <th>Description</th>
+      <th>Fulldoc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @additionals.each do |additional| %>
+      <tr>
+        <td><%= additional.raman %></td>
+        <td><%= additional.hrms %></td>
+        <td><%= additional.uv %></td>
+        <td><%= additional.fnmr %></td>
+        <td><%= additional.pnmr %></td>
+        <td><%= additional.bnmr %></td>
+        <td><%= additional.nnmr %></td>
+        <td><%= additional.mass1 %></td>
+        <td><%= additional.mass3 %></td>
+        <td><%= additional.buffer1 %></td>
+        <td><%= additional.buffer2 %></td>
+        <td><%= additional.buffer3 %></td>
+        <td><%= best_in_place additional, :oka, type: :checkbox, collection: %w[No Yes] %></td>
+        <td><%= best_in_place additional, :okb , type: :checkbox, collection: %w[No Yes] %></td>
+        <td><%= additional.singlepart_id %></td>
+        <td><%= additional.description_id %></td>
+        <td><%= additional.fulldoc_id %></td>
+        <td><%= link_to 'Show', additional %></td>
+        <td><%= link_to 'Edit', edit_additional_path(additional) %></td>
+        <td><%= link_to 'Destroy', additional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Additional', new_additional_path %>

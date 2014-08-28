@@ -1,0 +1,74 @@
+<%= form_for(@fulldoc) do |f| %>
+  <% if @fulldoc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fulldoc.errors.count, "error") %> prohibited this fulldoc from being saved:</h2>
+
+      <ul>
+      <% @fulldoc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-actions">
+  <%= f.button :submit, :class => "btn btn-sm btn-success" %>
+  </div>
+
+  <div class="field">
+  <%= f.label :chemist %><br>
+  <%= f.text_field :chemist %>
+  </div
+ 
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fulltext %><br>
+    <%= f.text_area :fulltext, :class => 'ckeditor', :size => "200x800" %> 
+  </div>
+  <div class="field">
+    <%= f.label :format %><br>
+    <%= f.text_area :format, :size => "200x800" %>
+  </div>
+  <div class="field">
+    <%= f.label :sumexp %><br>
+    <%= f.text_field :sumexp %>
+  </div>
+  <div class="field">
+    <%= f.label :fill1 %><br>
+    <%= f.text_field :fill1 %>
+  </div>
+  <div class="field">
+    <%= f.label :fill2 %><br>
+    <%= f.text_field :fill2 %>
+  </div>
+  <div class="field">
+    <%= f.label :fill3 %><br>
+    <%= f.text_field :fill3 %>
+  </div>
+  <div class="field">
+    <%= f.label :oka %><br>
+    <%= f.check_box :oka %>
+  </div>
+  <div class="field">
+    <%= f.label :okb %><br>
+    <%= f.check_box :okb %>
+  </div>
+  <div class="field">
+    <%= f.label :okc %><br>
+    <%= f.check_box :okc %>
+  </div>
+  <div class="field">
+    <%= f.label :okd %><br>
+    <%= f.check_box :okd %>
+  </div>
+
+<% end %>

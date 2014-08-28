@@ -1,0 +1,147 @@
+class Hnmr < ActiveRecord::Base
+
+  belongs_to :singlepart
+  belongs_to :fulldoc
+  has_many :nmrdetailhs
+
+
+  def createsignalfromstring
+    formatting
+    createsignalfromstring1
+  end
+ 
+  def formatting
+    t = analysis
+
+    if t.include?'H-NMR' then
+    t = t.gsub!'H-NMR','HNMR'    
+    end
+
+    if t.include?'H NMR' then
+    t = t.gsub!'H NMR','HNMR'
+    end
+
+    if t.include?') ppm.' then
+    t = t.gsub!') ppm.', ').'
+    end
+
+    if t.include?')ppm.' then
+    t = t.gsub!')ppm.', ').'
+    end
+
+    if t.include?'ppm.' then
+    t = t.gsub!'ppm.', '.'
+    end
+   
+    if t.include?' - ' then
+    t = t.gsub!' - ', '-'
+    end
+
+    if t.include?"\uF02D" then
+    t.gsub!"\uF02D", '-'
+    end
+
+    if t.include?"\u2013" then
+    t.gsub!"\u2013", '-'
+    end
+
+    if t.include?"\uF020" then
+    t.gsub!"\uF020", ' '
+    end
+
+    if t.include?"\uF06C" then
+    t = t.gsub!"\uF06C", "\u03BB"
+    end
+#Multiplikationskreuz ersetzen
+    if t.include?"\u00D7" then
+    t = t.gsub!"\u00D7", "x"
+    end
+#delta einfuegen
+    if t.include?"\uF065" then
+    t = t.gsub!"\uF065", "\u03B5"
+    end
+
+    if t.include?"\uF064" then
+    t = t.gsub!"\uF064", "\u03B4"
+    end
+
+    if t.include?') .' then
+    t = t.gsub!') .', ').'
+    end
+
+    if t.include?') -' then
+    t = t.gsub!') -', '). -'
+    end
+
+    if t.include?'.-IR' then
+    t = t.gsub!'.-IR', '. - IR'
+    end
+
+    if t.include?').-' then
+    t = t.gsub!').-', '). -'
+    end  
+  
+    reg = /(\d{4}),(\d{4})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{3}),(\d{4})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{3}),(\d{3})/
+    t.gsub!(reg, '\1, \2')
+  
+    reg = /(\d{3}),(\d{2} )/
+    t.gsub!(reg, '\1.\2')
+
+    reg = /(\d{3}),(\d{1} )/
+    t.gsub!(reg, '\1.\2')
+
+    reg = /(\d{3}.\d{1}),(\d{3}.\d{1})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{3}.\d{2}),(\d{3}.\d{2})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{3}.\d{2}),(\d{4}.\d{2})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{4}.\d{2}),(\d{4}.\d{2})/
+    t.gsub!(reg, '\1, \2')
+
+    reg = /(\d{4}.\d{1}),(\d{4}.\d{1})/
+    t.gsub!(reg, '\1, \2')
+
+    update_attribute(:analysis, t)
+  end
+
+  def createsignalfromstring1 
+
+    Nmrdetailh.where(["hnmr_id = ?", id]).destroy_all
+
+    analysis.split('),').each do |s|
+
+    nmrdetailh = Nmrdetailh.new
+    nmrdetailh.hnmr_id = id
+    nmrdetailh.signal = s
+    nmrdetailh.save
+
+    nmrdetailh.verschiebung2
+    end
+    counting
+  end
+
+  def counting
+    a = Nmrdetailh.where(["hnmr_id = ?", id]).sum(:hamount)
+    update_attribute(:amounth, a)
+    
+
+    #if signal = then
+    #update_attribute(:oka, true)
+    #end 
+  end
+
+
+end
+
+
+

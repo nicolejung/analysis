@@ -1,0 +1,2 @@
+module NmrdetailcsHelper
+end

@@ -1,0 +1,58 @@
+<h1>        FULL DOCUMENTS FOR ANALYSIS<br><br>
+(Enter Your Experimental Part and Proof Your Data)</h1>
+
+<%= link_to 'New Fulldoc', new_fulldoc_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Chemist </th> 
+      <th>Source</th>
+      <th>Name</th>
+      <!--<th>Fulltext</th>-->
+      <th>Format</th>
+      <th>Sumexp</th>
+      <th>Elemental</th>
+      <th>Cs</th>
+      <th>Hs</th>
+  <!--<th>Fill1</th>-->
+      <!--<th>Fill2</th>-->
+      <!--<th>Fill3</th>-->
+     <!-- <th>Oka</th>-->
+      <!--<th>Okb</th>-->
+      <!--<th>Okc</th>-->
+      <!--<th>Okd</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fulldocs.each do |fulldoc| %>
+      <tr>
+        <td><%= fulldoc.chemist %> </td>
+        <td><%= fulldoc.source %></td>
+        <td><%= fulldoc.name %> </td> 
+      <!--<th>  <td><%= fulldoc.fulltext %></td> -->
+        <td><%= fulldoc.format %></td> 
+        <td><%= fulldoc.sumexp %></td>
+        <td><%= link_to "details", singleparts_path(:fulldoc => fulldoc.id) %> <br> <% fulldoc.singleparts.each do |sp| %> <%= sp.ea %> <% end %></td>
+        <td><%= link_to "Cs", singleparts_path(:fulldoc => fulldoc.id) %> <br> <% fulldoc.singleparts.each do |sp| %> <%= sp.calcc %> <% end %></td>
+        <td><%= link_to "Hs", singleparts_path(:fulldoc => fulldoc.id) %> <br> <% fulldoc.singleparts.each do |sp| %> <%= sp.calch %> <% end %></td>
+        <!--<td><%= fulldoc.fill1 %></td>-->
+        <!--<td><%= fulldoc.fill2 %></td>-->
+        <!--<td><%= fulldoc.fill3 %></td>-->
+        <!--<td><%= fulldoc.oka %></td>-->
+        <!--<td><%= fulldoc.okb %></td>-->
+        <!--<td><%= fulldoc.okc %></td>-->
+        <!--<td><%= fulldoc.okd %></td>-->
+        <td><%= link_to 'Show', fulldoc %></td>
+        <td><%= link_to 'Edit', edit_fulldoc_path(fulldoc) %></td>
+        <td><%= link_to 'Destroy', fulldoc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

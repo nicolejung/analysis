@@ -1,0 +1,51 @@
+<h1>Listing addhs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>All</th>
+      <th>Value</th>
+      <th>Fill1</th>
+      <th>Fill2</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Okc</th>
+      <th>Okd</th>
+      <th>Fulldoc</th>
+      <th>Singlepart</th>
+      <th>Description</th>
+      <th>Hnmr</th>
+      <th>Nmrdetailh</th>
+      <th>Relation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addhs.each do |addh| %>
+      <tr>
+        <td><%= addh.all %></td>
+        <td><%= addh.value %></td>
+        <td><%= addh.fill1 %></td>
+        <td><%= addh.fill2 %></td>
+        <td><%= addh.oka %></td>
+        <td><%= addh.okb %></td>
+        <td><%= addh.okc %></td>
+        <td><%= addh.okd %></td>
+        <td><%= addh.fulldoc_id %></td>
+        <td><%= addh.singlepart_id %></td>
+        <td><%= addh.description_id %></td>
+        <td><%= addh.hnmr_id %></td>
+        <td><%= addh.nmrdetailh_id %></td>
+        <td><%= addh.relation_id %></td>
+        <td><%= link_to 'Show', addh %></td>
+        <td><%= link_to 'Edit', edit_addh_path(addh) %></td>
+        <td><%= link_to 'Destroy', addh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Addh', new_addh_path %>

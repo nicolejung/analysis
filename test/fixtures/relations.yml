@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  multiplet: MyString
+  givej: MyString
+  distance: 1
+  detail: MyString
+  fill1: MyString
+  hz: 9.99
+  oka: false
+  okb: false
+  fulldoc_id: MyString
+  singlepart_id: MyString
+  description_id: MyString
+  hnmr_id: MyString
+  nmrdetailh_id: MyString
+
+two:
+  multiplet: MyString
+  givej: MyString
+  distance: 1
+  detail: MyString
+  fill1: MyString
+  hz: 9.99
+  oka: false
+  okb: false
+  fulldoc_id: MyString
+  singlepart_id: MyString
+  description_id: MyString
+  hnmr_id: MyString
+  nmrdetailh_id: MyString

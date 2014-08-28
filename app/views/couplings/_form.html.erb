@@ -1,0 +1,69 @@
+<%= form_for(@coupling) do |f| %>
+  <% if @coupling.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@coupling.errors.count, "error") %> prohibited this coupling from being saved:</h2>
+
+      <ul>
+      <% @coupling.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :multiplet %><br>
+    <%= f.text_field :multiplet %>
+  </div>
+  <div class="field">
+    <%= f.label :givej %><br>
+    <%= f.text_field :givej %>
+  </div>
+  <div class="field">
+    <%= f.label :distance %><br>
+    <%= f.number_field :distance %>
+  </div>
+  <div class="field">
+    <%= f.label :hz %><br>
+    <%= f.text_field :hz %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %><br>
+    <%= f.text_field :detail %>
+  </div>
+  <div class="field">
+    <%= f.label :fill1 %><br>
+    <%= f.text_field :fill1 %>
+  </div>
+  <div class="field">
+    <%= f.label :oka %><br>
+    <%= f.check_box :oka %>
+  </div>
+  <div class="field">
+    <%= f.label :okb %><br>
+    <%= f.check_box :okb %>
+  </div>
+  <div class="field">
+    <%= f.label :fulldoc_id %><br>
+    <%= f.text_field :fulldoc_id %>
+  </div>
+  <div class="field">
+    <%= f.label :singlepart_id %><br>
+    <%= f.text_field :singlepart_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description_id %><br>
+    <%= f.text_field :description_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hnmr_id %><br>
+    <%= f.text_field :hnmr_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nmrdetailh_id %><br>
+    <%= f.text_field :nmrdetailh_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

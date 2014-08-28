@@ -1,0 +1,55 @@
+<h1>Listing nmrdetailhs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Signal</th>
+      <th>Area</th>
+      <th>Shift</th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Hamount</th>
+      <th>Fill1</th>
+      <th>Fill2</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Okc</th>
+      <th>Okd</th>
+      <th>Fulldoc</th>
+      <th>Singlepart</th>
+      <th>Description</th>
+      <th>Hnmr</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nmrdetailhs.each do |nmrdetailh| %>
+      <tr>
+        <td><%= nmrdetailh.signal %></td>
+        <td><%= nmrdetailh.area %></td>
+        <td><%= nmrdetailh.shift %></td>
+        <td><%= nmrdetailh.first %></td>
+        <td><%= nmrdetailh.last %></td>
+        <td><%= nmrdetailh.hamount %></td>
+        <td><%= nmrdetailh.fill1 %></td>
+        <td><%= nmrdetailh.fill2 %></td>
+        <td><%= nmrdetailh.oka %></td>
+        <td><%= nmrdetailh.okb %></td>
+        <td><%= nmrdetailh.okc %></td>
+        <td><%= nmrdetailh.okd %></td>
+        <td><%= nmrdetailh.fulldoc_id %></td>
+        <td><%= nmrdetailh.singlepart_id %></td>
+        <td><%= nmrdetailh.description_id %></td>
+        <td><%= nmrdetailh.hnmr_id %></td>
+        <td><%= link_to 'Show', nmrdetailh %></td>
+        <td><%= link_to 'Edit', edit_nmrdetailh_path(nmrdetailh) %></td>
+        <td><%= link_to 'Destroy', nmrdetailh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nmrdetailh', new_nmrdetailh_path %>

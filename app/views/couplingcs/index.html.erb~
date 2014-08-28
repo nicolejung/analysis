@@ -1,0 +1,55 @@
+<h1>Listing couplingcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Signal</th>
+      <th>Multiplet</th>
+      <th>Amountc</th>
+      <th>Coupling</th>
+      <th>Buffera</th>
+      <th>Bufferb</th>
+      <th>Bufferc</th>
+      <th>Bufferd</th>
+      <th>Oka</th>
+      <th>Okb</th>
+      <th>Cnmrbracket</th>
+      <th>Nmrdetailc</th>
+      <th>Cnmr</th>
+      <th>Singlepart</th>
+      <th>Description</th>
+      <th>Fulldoc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @couplingcs.each do |couplingc| %>
+      <tr>
+        <td><%= couplingc.signal %></td>
+        <td><%= couplingc.multiplet %></td>
+        <td><%= couplingc.amountc %></td>
+        <td><%= couplingc.coupling %></td>
+        <td><%= couplingc.buffera %></td>
+        <td><%= couplingc.bufferb %></td>
+        <td><%= couplingc.bufferc %></td>
+        <td><%= couplingc.bufferd %></td>
+        <td><%= couplingc.oka %></td>
+        <td><%= couplingc.okb %></td>
+        <td><%= couplingc.cnmrbracket_id %></td>
+        <td><%= couplingc.nmrdetailc_id %></td>
+        <td><%= couplingc.cnmr_id %></td>
+        <td><%= couplingc.singlepart_id %></td>
+        <td><%= couplingc.description_id %></td>
+        <td><%= couplingc.fulldoc_id %></td>
+        <td><%= link_to 'Show', couplingc %></td>
+        <td><%= link_to 'Edit', edit_couplingc_path(couplingc) %></td>
+        <td><%= link_to 'Destroy', couplingc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Couplingc', new_couplingc_path %>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  samplename: MyString
+  fulldescribe: MyString
+  purification: MyString
+  rfvalue: MyString
+  yield: MyString
+  fill1: MyString
+  fill2: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+  fulldoc_id: MyString
+  singlepart_id: MyString
+
+two:
+  samplename: MyString
+  fulldescribe: MyString
+  purification: MyString
+  rfvalue: MyString
+  yield: MyString
+  fill1: MyString
+  fill2: MyString
+  oka: false
+  okb: false
+  okc: false
+  okd: false
+  fulldoc_id: MyString
+  singlepart_id: MyString
